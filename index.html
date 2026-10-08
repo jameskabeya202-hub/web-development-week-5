@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SpendWise helps you compare your budget with your expenses.">
+  <title>SpendWise — Budget Snapshot</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="SpendWise home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>spend<span class="brand-accent">wise</span></span>
+      </a>
+      <span class="week-label">
+        <span class="status-dot"></span>
+        YOUR MONEY, IN FOCUS
+      </span>
+    </header>
+
+    <main id="home">
+      <section class="intro">
+        <div class="eyebrow">BUDGET SNAPSHOT <span>✳</span></div>
+        <h1>Make room for<br><span>what matters.</span></h1>
+        <p>
+          Start with your budget and spending. SpendWise will show you
+          what’s left to work with.
+        </p>
+      </section>
+
+      <section class="dashboard" aria-label="Budget calculator">
+        <div class="form-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-kicker">YOUR NUMBERS</span>
+              <h2>Set your monthly plan</h2>
+            </div>
+            <span class="month-badge">MONTHLY</span>
+          </div>
+
+          <form id="budget-form" novalidate>
+            <label for="budget">
+              Monthly budget
+              <span class="field-hint">How much can you spend?</span>
+            </label>
+            <div class="money-input">
+              <span aria-hidden="true">KSh</span>
+              <input
+                id="budget"
+                name="budget"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="e.g. 50,000"
+                inputmode="decimal"
+                required
+              >
+            </div>
+
+            <label for="expenses">
+              Total expenses
+              <span class="field-hint">How much have you spent?</span>
+            </label>
+            <div class="money-input">
+              <span aria-hidden="true">KSh</span>
+              <input
+                id="expenses"
+                name="expenses"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="e.g. 15,000"
+                inputmode="decimal"
+                required
+              >
+            </div>
+
+            <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+
+            <div class="actions">
+              <button class="button button-primary" type="submit">
+                Calculate balance <span aria-hidden="true">↗</span>
+              </button>
+              <button class="button button-secondary" id="prompt-entry" type="button">
+                Use quick prompts
+              </button>
+            </div>
+          </form>
+
+          <p class="privacy-note">
+            <span aria-hidden="true">◉</span>
+            Your numbers stay in this browser session.
+          </p>
+        </div>
+
+        <aside class="result-panel" aria-live="polite" aria-label="Calculation result">
+          <div class="result-top">
+            <span class="result-icon" aria-hidden="true">↗</span>
+            <span id="result-status">READY WHEN YOU ARE</span>
+          </div>
+
+          <div class="result-copy">
+            <span class="result-label">REMAINING BALANCE</span>
+            <div class="result-value" id="balance-value">—</div>
+            <p id="result-message">
+              Enter your budget and expenses to see your available balance.
+            </p>
+          </div>
+
+          <div class="result-divider"></div>
+
+          <div class="formula">
+            <span>THE MATH</span>
+            <strong>Budget <b>−</b> Expenses <b>=</b> Balance</strong>
+          </div>
+
+          <div class="result-decoration" aria-hidden="true">✳</div>
+        </aside>
+      </section>
+
+      <section class="tip">
+        <span class="tip-icon" aria-hidden="true">✦</span>
+        <p>
+          <strong>A small habit, a clearer picture.</strong>
+          Check in with your spending regularly to keep your plans on track.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>SPENDWISE</span>
+      <span>BUILDING BETTER MONEY HABITS, ONE STEP AT A TIME</span>
+    </footer>
+  </div>
+</body>
+</html>
